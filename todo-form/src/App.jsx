@@ -4,6 +4,7 @@ import Input from "./components/inputs.jsx";
 import Title from "./components/title.jsx";
 import Button from "./components/button.jsx";
 import Todo from "./components/todo.jsx";
+import Modal from "./components/modal.jsx";
 import DeleteButton from "./components/deleteBtn.jsx";
 import EditButton from "./components/editBtn.jsx";
 
@@ -58,8 +59,14 @@ function App() {
     getTodos();
   }
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <div className="flex flex-col w-screen h-screen justify-center items-center bg-black gap-[20px]">
+      <Modal
+        isOpen={isModalOpen}
+        isClose={() => setIsModalOpen(!isModalOpen)}
+      />
       <form
         action=""
         className="flex flex-col max-w-[70%] min-w-[500px] h-max justify-center items-center shadow-[0px_3px_8px_rgba(255,255,255,0.906)] bg-[#121114] border-none p-10.5 gap-[20px]"
@@ -90,7 +97,11 @@ function App() {
         >
           <Todo title={todo.title} />
           <DeleteButton clickDelete={() => deleteTodos(todo.id)} />
-          <EditButton />
+          <EditButton
+            clickEdit={() => {
+              setIsModalOpen(true);
+            }}
+          />
           {/* <Todo title={todo.title} clickDelete={() => deleteTodos(todo.id)} /> */}
         </div>
       ))}
