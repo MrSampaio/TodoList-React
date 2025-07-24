@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://potential-yodel-j6jvv5x4xxr3pw6p-3000.app.github.dev",
+  baseURL: "http://localhost:3000",
 });
 
 export default api;

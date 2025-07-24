@@ -51,20 +51,24 @@ app.get("/todo", async (req, res) => {
   res.status(200).json(todo);
 });
 
-app.put("/users/:id", async (req, res) => {
-  // await prisma.user.update({
-  //   where: {
-  //     id: req.params.id,
-  //   },
+app.put("/todo/:id", async (req, res) => {
+  try {
+    const updatedTodo = await prisma.post.update({
+      where: {
+        id: req.params.id,
+      },
+      data: {
+        title: req.body.title,
+        description: req.body.description,
+        concluded: req.body.concluded,
+      },
+    });
 
-  //   data: {
-  //     email: req.body.email,
-  //     name: req.body.name,
-  //     age: req.body.age,
-  //   },
-  // });
-
-  res.json(req.body);
+    res.json(updatedTodo);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Erro ao atualizar o todo." });
+  }
 });
 
 app.delete("/todo/:id", async (req, res) => {

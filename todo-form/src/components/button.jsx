@@ -5,7 +5,7 @@ function Button(props) {
       type={props.type}
       onClick={props.click}
     >
-      Adicionar tarefa
+      {props.textButton}
     </button>
   );
 }
