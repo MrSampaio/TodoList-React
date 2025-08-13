@@ -9,6 +9,9 @@ Projeto de lista de tarefas (Todo List) desenvolvido com foco em experiência do
 - **Backend com Node.js e MongoDB**: O servidor (`server/server.js`) gerencia dados persistidos em uma base MongoDB, oferecendo operações CRUD eficientes para tarefas.
 - **Arquitetura Modular**: Separação clara entre frontend (`src`), backend (`server`) e componentes/formulário específico (`todo-form`).
 
+## Link do projeto:
+https://todo-list-react-rho-sooty.vercel.app/
+
 ## Como Rodar o Projeto
 
 1. **Clone o repositório:**
