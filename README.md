@@ -33,20 +33,22 @@ Projeto de lista de tarefas (Todo List) desenvolvido com foco em experiência do
 
 3. **Configure o MongoDB**
    - Certifique-se de ter um serviço MongoDB rodando localmente ou forneça a URI de conexão adequada no backend.
+   - Rode a estrutura do banco de dados que está no arquivo "server/prisma/schema.prisma"
 
 4. **Inicie o backend:**
    ```bash
    cd server
-   node server.js
+   node --watch server.js
    ```
 
 5. **Inicie o frontend:**
    ```bash
-   npm start
+   cd todo-form
+   npm run dev
    ```
 
 6. **Acesse a aplicação**
-   - Normalmente estará disponível em `http://localhost:3000`
+   - Normalmente estará disponível em `http://localhost:5173`
 
 ## Pontos Fortes
 
@@ -71,3 +73,5 @@ Pull requests são bem-vindos! Sinta-se livre para sugerir melhorias ou reportar
 
 ---
 Desenvolvido por [MrSampaio](https://github.com/MrSampaio)
+
+Muito obrigado por ter lido até aqui! :)
