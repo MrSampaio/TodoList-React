@@ -38,14 +38,6 @@ function App() {
     }
   }
 
-  // function toggleConcluded(id) {
-  //   setTodos((prevTodos) =>
-  //     prevTodos.map((todo) =>
-  //       todo.id === id ? { ...todo, concluded: !todo.concluded } : todo
-  //     )
-  //   );
-  // }
-
   async function toggleConcludedApi(id, currentStatus) {
     try {
       await api.put(`/todo/${id}`, { concluded: !currentStatus });
@@ -124,16 +116,11 @@ function App() {
 
   return (
     <div className="flex flex-col w-screen min-h-max justify-center items-center bg-black gap-[20px] pt-[30px] pb-[30px] overflow-x-hidden">
-      {/* <Modal
-        isOpen={isModalOpen}
-        isClose={() => setIsModalOpen(!isModalOpen)}
-      ></Modal> */}
       <form
         action=""
         className="fadeInTop flex flex-col max-w-[70%] min-w-[500px] h-[50vh] justify-center items-center shadow-[0px_3px_8px_rgba(255,255,255,0.906)] bg-[#121114] border-none p-10.5 gap-[20px]"
       >
         <Title />
-        {/* <div className="inputs flex flex-col w-1/2 gap-[20px]"> */}
         <Input
           type="text"
           placeholder="Digite o título da tarefa"
@@ -146,18 +133,13 @@ function App() {
           ref={inputDesc}
         />
 
-        {/* </div> */}
         <Button
           type="button"
           click={crateNewTodos}
           textButton="Adicionar tarefa"
         />
-        {/* <Loader></Loader> */}
       </form>
-
-      {/* <Modal isOpen={isModalOpen} isClose={() => setIsModalOpen(false)}></Modal> */}
-
-      {/* <section className="flex flex-col max-w-[500px]  h-max justify-center items-center shadow-[0px_3px_8px_rgba(255,255,255,0.906)] bg-[#121114] border-none p-10.5 gap-[20px]"> */}
+      
       <div className="text-[#fff] flex flex-col gap-[12px] h-max min-h-[50vh]">
         {isLoading ? (
           <Loader />
@@ -214,8 +196,6 @@ function App() {
           />
         </Modal>
       </div>
-
-      {/* </section> */}
     </div>
   );
 }
