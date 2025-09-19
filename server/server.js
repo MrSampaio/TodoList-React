@@ -78,5 +78,5 @@ app.delete("/todo/:id", async (req, res) => {
     },
   });
 
-  res.json({ message: "apaguei esse puto" });
+  res.json({ message: "deletado com sucesso!" });
 });
